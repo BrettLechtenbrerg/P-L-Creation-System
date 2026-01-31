@@ -1,6 +1,6 @@
 "use client";
 
-import { Sun, Moon, Bell } from "lucide-react";
+import { ArrowLeft, Sun, Moon, Bell } from "lucide-react";
 import { useState, useEffect } from "react";
 import { HelpButton } from "@/components/help/help-button";
 
@@ -19,7 +19,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 h-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 no-print">
-      <div className="flex h-full items-center justify-end gap-4 px-6">
+      <div className="flex h-full items-center gap-4 px-6">
+        <a
+          href="https://masters-edge-portal.vercel.app"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span className="hidden sm:inline">Back to Portal</span>
+        </a>
+        <div className="flex flex-1 items-center justify-end gap-4">
         {/* Help Button */}
         <HelpButton />
 
@@ -48,6 +56,7 @@ export function Header() {
         {/* User Avatar */}
         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
           B
+        </div>
         </div>
       </div>
     </header>
