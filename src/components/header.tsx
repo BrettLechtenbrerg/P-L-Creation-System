@@ -1,7 +1,8 @@
 "use client";
 
-import { HelpCircle, Sun, Moon, Bell } from "lucide-react";
+import { Sun, Moon, Bell } from "lucide-react";
 import { useState, useEffect } from "react";
+import { HelpButton } from "@/components/help/help-button";
 
 export function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -20,13 +21,7 @@ export function Header() {
     <header className="sticky top-0 z-50 h-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 no-print">
       <div className="flex h-full items-center justify-end gap-4 px-6">
         {/* Help Button */}
-        <button
-          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-          aria-label="Help"
-        >
-          <HelpCircle className="h-5 w-5" />
-          <span className="hidden sm:inline">Help</span>
-        </button>
+        <HelpButton />
 
         {/* Dark Mode Toggle */}
         <button
